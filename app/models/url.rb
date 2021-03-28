@@ -6,6 +6,8 @@ class Url < ApplicationRecord
 
   before_validation :digest_url
 
+  has_many :trackers
+
   private
 
   def digest_url
