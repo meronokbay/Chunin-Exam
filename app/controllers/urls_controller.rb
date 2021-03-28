@@ -18,5 +18,10 @@ class UrlsController < ApplicationController
   def show
     @url = Url.find_by(url_digest: params[:url_digest])
     redirect_to root_url unless @url
+    if Tracker::PLATFORMS === browser.platform.to_s
+      @url.trackers.create(platform: browser.platform.to_s)
+    else
+      @url.trackers.create(platform: 'other')
+    end
   end
 end
