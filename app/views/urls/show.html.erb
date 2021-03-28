@@ -1,0 +1,9 @@
+<%= link_to "Link", @url.full_url %>
+<% count = visits_count @url%>
+<p>Total visits: <%= count[:total] %></p>
+<p>Android: <%= count[:android] %></p>
+<p>iOS: <%= count[:ios] %></p>
+<p>Windows: <%= count[:windows] %></p>
+<p>Mac: <%= count[:mac] %></p>
+<p>Linux: <%= count[:linux] %></p>
+<p>Other: <%= count[:other] %></p>
