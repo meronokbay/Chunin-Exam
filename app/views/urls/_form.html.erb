@@ -1,6 +1,8 @@
-<%= form_with model: @url do |form| %>
-  <div class="input-group">
-  <%= form.text_field :full_url, placeholder: 'Type or paste your link', "aria-label": 'Full link', class: 'form-control' %>
+<%= form_with model: @url, class: 'd-flex gap-3' do |form| %>
+  <%= form.text_field :full_url,
+    placeholder: 'Type or paste your link',
+    "aria-label": 'Full link',
+    class: 'form-control',
+    required: true %>
   <%= form.submit 'Shorten', class: 'btn btn-primary' %>
-  </div>
 <% end %>
