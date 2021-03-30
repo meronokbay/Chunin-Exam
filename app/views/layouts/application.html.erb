@@ -11,9 +11,8 @@
   </head>
 
   <body class="bg-light">
-    <%= render 'layouts/header' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render 'shared/header' %>
+    <%= render 'shared/flash' %>
     <div class="container">
       <%= yield %>
     </div>
