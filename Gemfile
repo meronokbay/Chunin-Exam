@@ -27,12 +27,18 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+# Extract info from useragent
 gem 'browser'
+# Use bootstrap for styling
 gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'jquery-rails'
-gem "chartkick"
+# Create beautiful charts
+gem 'chartkick'
 gem 'groupdate'
+# Use font awesome icons
 gem 'font-awesome-sass', '~> 5.15.1'
+# Use devise for user authentication
+gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
