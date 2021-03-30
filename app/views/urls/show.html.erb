@@ -1,1 +1,3 @@
 <%= link_to "Link", @url.full_url %>
+<%= line_chart @url.trackers.group_by_day(:created_at).count %>
+<%= pie_chart @url.trackers.group(:platform).count %>
