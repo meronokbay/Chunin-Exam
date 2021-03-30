@@ -1,11 +1,17 @@
 <div class="bg-white shadow-sm p-4 my-4 rounded">
-  <%= content_tag 'h1', @url.full_url, class: 'text-truncate' %>
-  <div class="d-flex align-items-center gap-3">
-    <%= link_to shortened_link_url(@url.url_digest) %>
-    <button class="btn btn-outline-success">
+  <%= content_tag 'h3', @url.full_url, class: 'text-truncate' %>
+  <div class="d-flex align-items-center gap-3" data-controller="clipboard">
+    <%= content_tag 'input',
+      nil,
+      type: 'text',
+      value: shortened_link_url(@url.url_digest),
+      readonly: true,
+      class: 'w-lg-25 border p-1',
+      'data-clipboard-target': 'source' %>
+    <button class="btn btn-outline-success py-1" data-action="clipboard#copy">
       <%= icon 'far', 'clipboard' %>
     </button>
-    <button class="btn btn-outline-danger">
+    <button class="btn btn-outline-danger py-1">
       <%= icon 'fas', 'trash' %>
     </button>
   </div>
