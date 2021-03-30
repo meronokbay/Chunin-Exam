@@ -1,3 +1,12 @@
-<%= link_to "Link", @url.full_url %>
-<%= line_chart @url.trackers.group_by_day(:created_at).count %>
-<%= pie_chart @url.trackers.group(:platform).count %>
+<div class="bg-white p-4 my-4 border rounded">
+  <%= content_tag 'h1', @url.full_url, class: 'text-truncate' %>
+  <%= link_to shortened_link_url(@url.url_digest) %>
+</div>
+<div class="bg-white p-4 my-4 border rounded">
+  <h2>Visits</h2>
+  <%= line_chart @url.trackers.group_by_day(:created_at).count %>
+</div>
+<div class="bg-white p-4 my-4 border rounded">
+  <h2>Platforms</h2>
+  <%= pie_chart @url.trackers.group(:platform).count %>
+</div>
