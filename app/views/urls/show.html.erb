@@ -1,4 +1,4 @@
-<div class="bg-white p-4 my-4 border rounded">
+<div class="bg-white shadow-sm p-4 my-4 rounded">
   <%= content_tag 'h1', @url.full_url, class: 'text-truncate' %>
   <div class="d-flex align-items-center gap-3">
     <%= link_to shortened_link_url(@url.url_digest) %>
@@ -10,11 +10,11 @@
     </button>
   </div>
 </div>
-<div class="bg-white p-4 my-4 border rounded">
+<div class="bg-white shadow-sm p-4 my-4 rounded">
   <h2>Visits</h2>
   <%= line_chart @url.trackers.group_by_day(:created_at).count %>
 </div>
-<div class="bg-white p-4 my-4 border rounded">
+<div class="bg-white shadow-sm p-4 my-4 rounded">
   <h2>Platforms</h2>
   <%= pie_chart @url.trackers.group(:platform).count %>
 </div>
