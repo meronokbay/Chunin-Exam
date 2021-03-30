@@ -1,6 +1,14 @@
 <div class="bg-white p-4 my-4 border rounded">
   <%= content_tag 'h1', @url.full_url, class: 'text-truncate' %>
-  <%= link_to shortened_link_url(@url.url_digest) %>
+  <div class="d-flex align-items-center gap-3">
+    <%= link_to shortened_link_url(@url.url_digest) %>
+    <button class="btn btn-outline-success">
+      <%= icon 'far', 'clipboard' %>
+    </button>
+    <button class="btn btn-outline-danger">
+      <%= icon 'fas', 'trash' %>
+    </button>
+  </div>
 </div>
 <div class="bg-white p-4 my-4 border rounded">
   <h2>Visits</h2>
