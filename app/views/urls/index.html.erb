@@ -1,5 +1,12 @@
-<h1>Hello, World!</h1>
-
-<%= link_to 'New Link', new_url_path, class: 'btn btn-primary' %>
-
-<%= render @urls %>
+<% if @urls.any? %>
+  <div class="bg-white p-3 shadow-sm d-flex justify-content-between align-items-center">
+    <h1>Shortened Links</h1>
+    <%= link_to 'New Link', new_url_path, class: 'btn btn-outline-primary' %>
+  </div>
+  <%= render @urls %>
+<% else %>
+  <div class="bg-white p-3 shadow-sm text-center">
+    <p>You haven't shortened any links yet.</p>
+    <%= link_to 'Shorten a Link', new_url_path, class: 'btn btn-primary' %>
+  </div>
+<% end %>

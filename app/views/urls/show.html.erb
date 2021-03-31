@@ -1,5 +1,5 @@
 <div class="bg-white shadow-sm p-4 my-4 rounded">
-  <%= content_tag 'h3', @url.full_url, class: 'text-truncate' %>
+  <%= content_tag 'h4', @url.full_url, class: 'text-truncate ' %>
   <div class="d-flex align-items-center gap-3" data-controller="clipboard">
     <%= content_tag 'input',
       nil,
@@ -16,11 +16,18 @@
     </button>
   </div>
 </div>
-<div class="bg-white shadow-sm p-4 my-4 rounded">
-  <h2>Visits</h2>
-  <%= line_chart @url.trackers.group_by_day(:created_at).count %>
-</div>
-<div class="bg-white shadow-sm p-4 my-4 rounded">
-  <h2>Platforms</h2>
-  <%= pie_chart @url.trackers.group(:platform).count %>
-</div>
+
+<% if @url.trackers.any? %>
+  <div class="bg-white shadow-sm p-4 my-4 rounded">
+    <h2>Visits</h2>
+    <%= line_chart @url.trackers.group_by_day(:created_at).count %>
+  </div>
+  <div class="bg-white shadow-sm p-4 my-4 rounded">
+    <h2>Platforms</h2>
+    <%= pie_chart @url.trackers.group(:platform).count %>
+  </div>
+<% else %>
+  <div class="bg-white shadow-sm p-4 my-4 rounded text-center">
+    You'll find analytics on your link when it gets clicked on.
+  </div>
+<% end %>
