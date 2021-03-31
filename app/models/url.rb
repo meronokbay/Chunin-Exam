@@ -6,9 +6,9 @@ class Url < ApplicationRecord
 
   before_validation :digest_url
 
-  has_many :trackers
-  has_one :grouping
-  has_one :url, through: :grouping
+  has_many :trackers, dependent: :destroy
+  has_one :grouping, dependent: :destroy
+  has_one :user, through: :grouping
 
   private
 

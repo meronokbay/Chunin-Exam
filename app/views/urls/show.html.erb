@@ -11,9 +11,7 @@
     <button class="clipboard-button btn btn-outline-success py-1" data-action="clipboard#copy">
       <%= icon 'far', 'clipboard' %>
     </button>
-    <button class="btn btn-outline-danger py-1">
-      <%= icon 'fas', 'trash' %>
-    </button>
+    <%= link_to icon('fas', 'trash'), @url, method: :delete, class: 'btn btn-outline-danger py-1' %>
   </div>
 </div>
 
@@ -28,6 +26,6 @@
   </div>
 <% else %>
   <div class="bg-white shadow-sm p-4 my-4 rounded text-center">
-    You'll find analytics on your link when it gets clicked on.
+    You'll find analytics about your link here when it gets clicked on.
   </div>
 <% end %>

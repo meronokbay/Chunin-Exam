@@ -1,5 +1,6 @@
 class UrlsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new]
+  before_action :find_url, only: [:show, :destroy]
 
   def index
     @urls = current_user.urls
@@ -26,8 +27,13 @@ class UrlsController < ApplicationController
   end
 
   def show
-    @url = Url.find_by(id: params[:id])
     redirect_to root_url unless @url
+  end
+
+  def destroy
+    @url.destroy
+    flash[:notice] = 'The link was deleted successfully'
+    redirect_to root_url
   end
 
   def shortened_link
@@ -45,5 +51,18 @@ class UrlsController < ApplicationController
   
   def url_params
     params.require(:url).permit(:full_url)
+  end
+
+  def find_url
+    if user_signed_in?
+      @url = current_user.urls.find(params[:id])
+    else
+      @url = Url.find(params[:id])
+      unless @url.user.nil?
+        flash[:alert] = "You're not authorized to access this link"
+        redirect_to root_url
+        return
+      end
+    end
   end
 end
