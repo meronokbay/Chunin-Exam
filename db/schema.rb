@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_30_192102) do
+ActiveRecord::Schema.define(version: 2021_03_31_093452) do
+
+  create_table "groupings", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "url_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["url_id"], name: "index_groupings_on_url_id"
+    t.index ["user_id"], name: "index_groupings_on_user_id"
+  end
 
   create_table "trackers", force: :cascade do |t|
     t.string "platform"
@@ -40,5 +49,7 @@ ActiveRecord::Schema.define(version: 2021_03_30_192102) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "groupings", "urls"
+  add_foreign_key "groupings", "users"
   add_foreign_key "trackers", "urls"
 end
