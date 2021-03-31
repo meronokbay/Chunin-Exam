@@ -5,7 +5,10 @@
       class: 'text-dark text-decoration-none') %>
     </div>
     <% if user_signed_in? %>
-      <%= link_to icon('fas', 'sign-out-alt', class: 'fs-4 text-primary'), destroy_user_session_path, data: { confirm: 'Are you sure?'}, method: :delete %>
+      <div>
+        <%= link_to icon('fas', 'user-cog', class: 'fs-5 text-primary ps-3'),  edit_user_registration_path %>
+        <%= link_to icon('fas', 'sign-out-alt', class: 'fs-5 text-primary ps-3'), destroy_user_session_path, method: :delete %>
+      </div>
     <% else %>
       <%= link_to icon('fas', 'sign-in-alt', class: 'fs-4 text-primary'), new_user_session_path %>
     <% end %>
