@@ -2,6 +2,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get 'home/index'
   devise_for :users
-  resources :urls, only: [:index, :new, :create]
-  get '/:url_digest', to: 'urls#show', as: 'shortened_link'
+  resources :urls, only: [:index, :new, :create, :show]
+  get '/:url_digest', to: 'urls#shortened_link', as: 'shortened_link'
 end
