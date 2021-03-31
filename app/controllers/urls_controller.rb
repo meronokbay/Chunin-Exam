@@ -56,12 +56,17 @@ class UrlsController < ApplicationController
   def find_url
     if user_signed_in?
       @url = current_user.urls.find_by(id: params[:id])
+      redirect_if_falsy !@url.nil?
     else
       @url = Url.find_by(id: params[:id])
+      redirect_if_falsy @url.user.nil?
     end
-    if @url.nil? || @url.user.nil?
-      flash[:alert] = "Link doesn't exist!"
-      redirect_to root_url
-    end
+  end
+
+  def redirect_if_falsy(value)
+    return if value
+
+    flash[:alert] = "Link doesn't exist!"
+    redirect_to root_url
   end
 end
