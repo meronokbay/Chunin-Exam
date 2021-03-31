@@ -18,7 +18,7 @@ class UrlsController < ApplicationController
     end
     if url.valid?
       url.save
-      flash[:notice] = "Url was shortened successfully"
+      flash[:notice] = "Url shortened successfully."
       redirect_to url
     else
       flash[:alert] = url.errors.full_messages[0]
@@ -32,7 +32,7 @@ class UrlsController < ApplicationController
 
   def destroy
     @url.destroy
-    flash[:notice] = 'The link was deleted successfully'
+    flash[:notice] = 'Link deleted successfully.'
     redirect_to root_url
   end
 
@@ -59,7 +59,7 @@ class UrlsController < ApplicationController
     else
       @url = Url.find(params[:id])
       unless @url.user.nil?
-        flash[:alert] = "You're not authorized to access this link"
+        flash[:alert] = "You're not authorized to access this link!"
         redirect_to root_url
         return
       end
