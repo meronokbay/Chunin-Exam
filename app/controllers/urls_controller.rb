@@ -55,14 +55,13 @@ class UrlsController < ApplicationController
 
   def find_url
     if user_signed_in?
-      @url = current_user.urls.find(params[:id])
+      @url = current_user.urls.find_by(id: params[:id])
     else
-      @url = Url.find(params[:id])
-      unless @url.user.nil?
-        flash[:alert] = "You're not authorized to access this link!"
-        redirect_to root_url
-        return
-      end
+      @url = Url.find_by(id: params[:id])
+    end
+    if @url.nil? || @url.user.nil?
+      flash[:alert] = "Link doesn't exist!"
+      redirect_to root_url
     end
   end
 end
