@@ -31,7 +31,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'browser'
 # Use bootstrap for styling
 gem 'bootstrap', '~> 5.0.0.beta2'
-gem 'jquery-rails'
 # Create beautiful charts
 gem 'chartkick'
 gem 'groupdate'
