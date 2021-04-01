@@ -9,9 +9,9 @@
       class: 'w-lg-25 border p-1',
       'data-clipboard-target': 'source' %>
     <button class="clipboard-button btn btn-outline-success py-1" data-action="clipboard#copy">
-      <%= icon 'far', 'clipboard' %>
+      <%= icon 'far', 'clipboard', title: 'Copy Link' %>
     </button>
-    <%= link_to icon('fas', 'trash'), @url, method: :delete, class: 'btn btn-outline-danger py-1' %>
+    <%= link_to icon('fas', 'trash'), @url, method: :delete, class: 'btn btn-outline-danger py-1', title: 'Delete Link' %>
   </div>
 </div>
 

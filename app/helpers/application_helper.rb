@@ -11,7 +11,7 @@ module ApplicationHelper
                     type: 'button',
                     'data-action': 'flash#remove',
                     class: 'btn-close',
-                    'aria-label': 'Close')
+                    title: 'Close')
     end
   end
 end

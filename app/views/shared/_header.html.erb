@@ -1,16 +1,31 @@
 <header class="bg-white mb-3">
   <div class="d-flex justify-content-between align-items-center shadow-sm p-3">
     <div class="fs-3">
-      <%= link_to(icon('fas', 'link', 'Shortener', class: 'text-primary'), root_path,
-      class: 'text-dark text-decoration-none') %>
+      <%= link_to(icon('fas', 'link', 'Shortener',
+          class: 'text-primary',
+          'aria-hidden': true),
+        root_path,
+        class: 'text-dark text-decoration-none') %>
     </div>
     <% if user_signed_in? %>
       <div>
-        <%= link_to icon('fas', 'user-cog', class: 'fs-5 text-primary ps-3'),  edit_user_registration_path %>
-        <%= link_to icon('fas', 'sign-out-alt', class: 'fs-5 text-primary ps-3'), destroy_user_session_path, method: :delete %>
+        <%= link_to icon('fas',
+          'user-cog',
+          class: 'fs-5 text-primary ps-3',
+          title: 'Settings'),
+          edit_user_registration_path %>
+        <%= link_to icon('fas',
+          'sign-out-alt',
+          class: 'fs-5 text-primary ps-3',
+          title: 'Logout'),
+          destroy_user_session_path,
+          method: :delete %>
       </div>
     <% else %>
-      <%= link_to icon('fas', 'sign-in-alt', class: 'fs-4 text-primary'), new_user_session_path %>
+      <%= link_to icon('fas',
+        'sign-in-alt',
+        class: 'fs-4 text-primary', title: 'Login'),
+        new_user_session_path %>
     <% end %>
   </div>
 </header>
