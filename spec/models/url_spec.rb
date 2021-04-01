@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Url, type: :model do
   it "doesn't validate url if full_url isn't present" do
-    url = Url.create()
+    url = Url.create
     expect(url.valid?).to be false
   end
 
@@ -21,7 +21,7 @@ RSpec.describe Url, type: :model do
     expect(url.valid?).to be false
   end
 
-  it "validates url if full_url is present and has a valid schema" do
+  it 'validates url if full_url is present and has a valid schema' do
     url = Url.create(full_url: 'https://example.com')
     expect(url.valid?).to be true
   end

@@ -1,9 +1,9 @@
 class HomeController < ApplicationController
   def index
-    unless user_signed_in?
-      @url = Url.new
-    else
+    if user_signed_in?
       redirect_to urls_url
+    else
+      @url = Url.new
     end
   end
 end

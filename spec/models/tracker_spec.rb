@@ -20,7 +20,7 @@ RSpec.describe Tracker, type: :model do
     expect(tracker.valid?).to be false
   end
 
-  it "validates if platform is acceptable" do
+  it 'validates if platform is acceptable' do
     tracker = Tracker.new(url_id: @url.id, platform: 'linux')
     expect(tracker.valid?).to be true
   end

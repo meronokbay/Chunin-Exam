@@ -16,7 +16,7 @@ RSpec.describe Grouping, type: :model do
     expect(group.valid?).to be false
   end
 
-  it "validates if both url and user exist" do
+  it 'validates if both url and user exist' do
     group = Grouping.new(user_id: @user.id, url_id: @url.id)
     expect(group.valid?).to be true
   end
