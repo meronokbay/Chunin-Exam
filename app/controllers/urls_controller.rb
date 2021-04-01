@@ -3,7 +3,7 @@ class UrlsController < ApplicationController
   before_action :find_url, only: %i[show destroy]
 
   def index
-    @urls = current_user.urls
+    @urls = current_user.urls.paginate(page: params[:page])
   end
 
   def new

@@ -39,6 +39,8 @@ gem 'groupdate'
 gem 'font-awesome-sass', '~> 5.15.1'
 # Use devise for user authentication
 gem 'devise'
+# Implement pagination using will_paginate
+gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
