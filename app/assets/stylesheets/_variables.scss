@@ -1,0 +1,16 @@
+$primary: #1E40AF;
+// Add responsive variants of w class
+$utilities: (
+  "width": (
+    property: width,
+    responsive: true,
+    class: w,
+    values: (
+      25: 25%,
+      50: 50%,
+      75: 75%,
+      100: 100%,
+      auto: auto
+    )
+  )
+);

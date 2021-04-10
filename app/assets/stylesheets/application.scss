@@ -1,0 +1,39 @@
+@import "variables";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.hero-img {
+  height: 300px;
+}
+
+.clipboard-button {
+  display: none;
+}
+
+.clipboard--supported .clipboard-button {
+  display: initial;
+}
+
+.pagination {
+  @extend .my-3, .d-flex, .justify-content-center, .gap-1;
+
+  a, span, em {
+    @extend .py-1, .px-3, .border, .border-primary;
+  }
+
+  .disabled {
+    @extend .text-secondary, .border-secondary;
+  }
+
+  .current {
+    @extend .fw-bold, .bg-primary, .text-white;
+  }
+
+  a {
+    @extend .text-decoration-none, .text-primary;
+    &:hover, &:focus {
+      @extend .bg-primary, .text-white;
+    }
+  }
+}

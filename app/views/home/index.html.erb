@@ -1,0 +1,11 @@
+<div class="text-center">
+  <%= image_tag 'link_shortener_hero.svg', class: 'hero-img py-3', alt: 'Link Shortener Hero Image' %>
+  <div class="py-4">
+    <h1>Shorten Any Link</h1>
+    <p>Manage, track and simplify the web using powerful and recognizable short links.</p>
+  </div>
+  <%= render 'shared/form' %>
+  <p class="text-secondary py-2">
+    <%= link_to 'Login', new_user_session_path %> to easily access your shortened links.
+  </p>
+</div>
