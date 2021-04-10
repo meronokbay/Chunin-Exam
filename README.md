@@ -19,6 +19,15 @@
 - Chartkick
 - Font Awesome
 
+## Live Demo
+
+[Live Demo](https://shorten-dat-url.herokuapp.com/)
+
+### Test Account
+
+email: test@example.com
+password: 123456
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
