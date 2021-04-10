@@ -2,7 +2,7 @@
 
 > Shorten any link using this URL shortener web application.
 
-![screenshot](./app_screenshot.png)
+![screenshot](./app_screenshot.jpg)
 
 ## Features
 
@@ -36,9 +36,6 @@ git clone https://github.com/meronokbay/Chunin-Exam
 
 # cd into the cloned repo
 cd Chunin-Exam
-
-# checkout the chunin-exam-solution branch
-git checkout chunin-exam-solution
 ```
 
 ### Install
